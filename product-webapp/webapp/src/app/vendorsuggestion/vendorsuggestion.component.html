@@ -1,0 +1,52 @@
+<div id="flat_nav_breadcrumb">
+    <a href="#">Home</a>
+    <a href="/sub-services">Sub-Service</a>
+    <a href="/vendor-suggest">Suggestions</a>
+  </div>
+  
+  <div class="title col-lg-12 col-md-12 col-sm-12" style="overflow:hidden;">
+    <div class="header">
+      <h1 *ngIf="header1"><strong>Recomended Vendors</strong></h1>
+      <h1 *ngIf="header2"><strong>Sorry No Vendors Available</strong></h1>
+    </div>
+    <div class="searchbar header">
+          <mat-form-field >
+            <input matInput #input maxlength="6"  [formControl]="pincodeControl" (keydown.enter)="this.getVendors()" placeholder="pincode">
+          </mat-form-field>
+          <!-- <a  class="navgate" mat-button>Show All Vendors <mat-icon>arrow_right_alt</mat-icon></a> -->
+    </div>
+  </div>
+
+  <div *ngIf="header1" class="opencards" >
+    <div class="cards">
+   <mat-card class="example-card" *ngFor="let v of vendorsList | paginate:{itemsPerPage:3, currentPage:p}">
+    <mat-card-header >
+       <div mat-card-avatar></div>
+       <mat-card-title> {{v.serviceName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="/assets/vendorSuggestionIMG/a.jpeg" alt="Photo of a Shiba Inu">
+
+      <mat-card-content>
+        <p>
+          <br>
+       <strong>{{v.vendorName}}</strong> 
+        <br>
+        {{v.experience}} Years
+        <br>
+        {{v.serviceDuration}} Hours
+        <br>
+        ₹{{v.cost}}
+      </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button matRipple class="Cb" (click)="vendorDescription(v)">Book Now</button>
+      </mat-card-actions>
+    </mat-card>
+   </div>
+ </div>
+
+  <div class="pagee col-lg-12 col-md-12 col-sm-12 col-xl-12" *ngIf="header1">
+    <div>
+      <pagination-controls  (pageChange)="p=$event"></pagination-controls>
+    </div>
+  </div>

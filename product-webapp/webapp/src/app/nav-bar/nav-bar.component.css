@@ -1,0 +1,130 @@
+
+.routing-data{
+  min-height:35rem;
+}
+
+mat-divider{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: black;
+}
+
+mat-sidenav{
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  /* background: linear-gradient(-45deg,rgba(48, 249, 3, 0.6),rgb(248, 138, 4)); */
+  color: black;
+  border-radius: 10px;
+  /* padding: 16px; */
+  text-align: center;
+}
+
+mat-sidenav a:hover{
+  background-color: white;
+}
+
+mat-sidenav-container{
+  height: calc(100vh - 65px);
+}
+
+mat-sidenav li button{
+  color: black;
+  display: block;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+
+.example-spacer {
+  flex: auto;
+}
+
+.link{
+  cursor: pointer;
+}
+
+button{
+  border-style: none;
+}
+
+
+
+
+****************************************************************
+
+
+.example-sidenav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 200px;
+  position: absolute !important;
+  /* background-color: transparent; */
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+
+.booking {
+  color: rgb(0, 0, 0);
+  float:right;
+}
+
+.booking:hover {
+  background-color: skyblue;
+  color: white;
+}
+
+
+.services {
+  color: rgb(0, 0, 0);
+  float:right;
+}
+
+.services:hover {
+  background: skyblue;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+
+  /* .hide { display: none; opacity: 0; }
+  .show { display: block; opacity: 1; } 
+  #Anutrickz_translateBTN { position:absolute;top:17px;right:70px; z-index: 99; }
+  #Anutrickz_translateBTN svg{width:24px;height:24px} 
+  #ATLang_list { width: 10rem; right: 0px; box-shadow: 0 0 15px rgb(0 0 0 / 7%); border-radius: 0.5rem; position: absolute; z-index: 9; background: #fff; top: 100%; color: #000;} 
+  #ATLang_list li { list-style: none; line-height: 1.5rem; font-size: .875rem; font-weight: 600;cursor:pointer; padding-left: 0.75rem; padding-right: 0.75rem; padding-top: 0.25rem; padding-bottom: 0.25rem;} 
+  #ATLang_list ul{margin:0 auto} 
+  #Anutrickz_translateBTN.hover #ATLang_list{display:block}.language-active {color: green;}.language-list{cursor:pointer;margin:3px;align-items:center}
+  #goog-gt-tt,.goog-te-banner-frame{display:none!important} */
+  /* .button{
+    width: 100%;
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    border-radius: 5px;
+    background: #f44336;
+  } */

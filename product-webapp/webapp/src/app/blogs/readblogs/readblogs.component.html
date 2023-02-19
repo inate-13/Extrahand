@@ -1,0 +1,133 @@
+<div id="flat_nav_breadcrumb">
+
+<!-- <div id="flat_nav_breadcrumb">
+  <a href="#">Home</a>
+  <a href="/">Blogs</a>
+  <a href="/">Suggestions</a>
+</div> -->
+<mat-dialog-content style="width: 100%; height: 100%;">
+  <div class="opencards">
+    <div class="cards">
+
+      <mat-card class="example-card">
+        <!--      <mat-card class="example-card" *ngFor="let data of cardData" >
+       <mat-card class="example-card" *ngFor="let data of vendorsList | paginate:{itemsPerPage:3, currentPage:p}">
+       -->
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>{{cardData.blogTitle}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="/assets/vendorSuggestionIMG/a.jpeg" alt="Photo of a Shiba Inu">
+
+        <mat-card-content>
+          <div>
+
+            <div style="position: relative!important;">
+              <div style=" display:flex ;position:absolute;top:0;right:0;">
+                <mat-icon>account_circle</mat-icon>
+                <span style="margin-bottom:12px;">{{cardData.vendorName}}</span>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <mat-icon>calendar_today</mat-icon>
+              <span style="margin-top:4px;">{{cardData.uploadDate}}</span>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+          <p>
+            {{cardData.blogContent}}
+          </p>
+          <br><br>
+          <div class="downbutton">
+            <div style="display: flex;margin: 5px; padding: 5px;">
+              <mat-icon (click)="LikesOrDislike(cardData.blogId,userIda)" *ngIf="Liked">favorite</mat-icon>
+              <span *ngIf="Liked">{{LikeSize}}likes</span>
+              <!--To get user ID-->
+              <span *ngIf="hide">{{userIda}}</span>
+              <mat-icon (click)="LikesOrDislike(cardData.blogId,userIda)" *ngIf="NotLiked">favorite_border</mat-icon>
+              <span *ngIf="NotLiked">{{LikeSize}}likes</span>
+            </div>
+            <div style="display: flex; margin: 5px;padding: 5px;">
+              <span class="material-icons" (click)="getCommentsByBlogId(cardData.blogId)">comment</span>
+              <span>Comments</span>
+
+            </div>
+
+          </div>
+          <!--    <button matRipple class="Cb"style="padding: 5px; margin: 10px;" (click)="getCommentsByBlogId(cardData.blogId)">Comments</button>
+          -->
+          <!--
+              <div *ngIf="OpenCommentBox">
+                <input type="text" placeholder="Comment">
+                <button >Submit</button>
+              </div>
+              <div *ngFor="let CommentsofBlogs of CommentsofBlog"> 
+                <span>
+                  {{CommentsofBlogs.userName}}:
+                </span>
+                {{CommentsofBlogs.body}}
+                <br>
+                <a href="javascript:void(0)" (click)="getSubComments(CommentsofBlogs.commentId)">replies</a>
+                <div (click)="setActivecomment.emit({id:CommentsofBlogs.commentId,type:'replying'})">
+                  {{(setActivecomment)="setActivecomment($event)"}}
+                  <input type="text" placeholder="Comment">
+                  <button >Submit
+                    
+                  </button>
+                </div>
+                <div *ngFor="let SubCommentsofBlogs of SubCommentsOfBlog">
+                  <span>
+                    &nbsp;&nbsp;&nbsp; {{SubCommentsofBlogs.userName}}:
+                  </span>
+                  {{SubCommentsofBlogs.body}}
+                  <br>
+                  <a href="javascript:void(0)" (click)="getSubComments(CommentsofBlogs.commentId)">replies</a>
+                </div>
+              </div>
+              -->
+
+          <div *ngIf="OpenCommentBox" class="commentBox">
+            <Form [formGroup]="CommentForm" (ngSubmit)="CommentService(cardData.blogId)">
+              <input type="text" placeholder="Comment" style="min-width:300px;" formControlName="body">
+              <button>Submit</button>
+            </Form>
+            <div style="background-color: #f2f2f2; margin-bottom: 10px; margin-top: 40px;">
+              <div *ngFor="let CommentsofBlogs of CommentsofBlog" class="comments">
+                <mat-icon style="margin-bottom: 2px; margin-left: -31px;">
+                  account_circle</mat-icon><span>{{CommentsofBlogs.userName}}:
+                </span>
+                {{CommentsofBlogs.body}}
+                <br>
+              </div>
+            </div>
+
+          </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+
+          <!--      <div class="downbutton" >
+              <button matRipple class="Cb"style="padding: 5px; margin: 10px;">Update</button>
+              <button matRipple class="Cb"style="padding: 5px; margin: 10px;">Delete</button>
+            </div>
+      
+      <div class="downbutton" >
+            <button: 5px; margin: 10px;" >Update</button>
+            <button matRipple class="Cb"style="padding: 5px; margin: 10px;" 
+            (click)="deleteService(data.serviceId)">Delete</button>
+          </div>
+             -->
+        </mat-card-actions>
+      </mat-card>
+
+
+
+
+    </div>
+
+  </div>
+
+</mat-dialog-content>

@@ -1,0 +1,10 @@
+{
+    "HOME":{
+    "SELECT":"choose language",
+    "USERUPDATE":"User Update",
+    "VENDORUPDATE":"Vendor Update",
+    "LOGIN":"Login",
+    "LOGOUT":"Logout"
+ 
+}
+}

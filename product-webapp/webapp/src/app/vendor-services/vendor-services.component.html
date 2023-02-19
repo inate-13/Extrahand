@@ -1,0 +1,151 @@
+
+
+<!-- Section: Design Block -->
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Connect with Us<br />
+            <span class="text-primary">for an Extra Hand</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Electricians,
+            AC Technician,
+            Refrigerator Technician,
+            Makeup Artist,
+            TV Technician,
+            Water purifier Technician,
+            Bathroom Cleaner worker,
+            Saloon for Men/ women,
+            Plumber,
+            Kitchen cleaning proficient,
+            Car cleaning,
+            Massage Men/women,
+            Pest control service ,
+            Furniture Makers.Builders,
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-3 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <h2 class="fw-bold d-flex justify-content-center mb-3">Service Form</h2>
+
+              <form [formGroup]="VendorServiceForm" (ngSubmit)="VendorService()">
+
+
+
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <!-- <label class="form-label" for="emailId">Email Address</label> -->
+
+                  <select formControlName="serviceCatogries" class="form-control form-control-sm" name="cat" id="cat">
+                    <option value="" disabled selected hidden>Select Category</option>
+                    <option value="HOUSE_KEEPING">House Keeping</option>
+                    <option value="AC_MAINTENANCE">AC Maintenance</option>
+                    <option value="TV_REPAIR">Tv Repair and Service</option>
+                    <option value="COMPUTER_REPAIR_AND_SERVICE">Computer Repair and Services</option>
+                    <option value="PLUMBER">Plumbing</option>
+                    <option value="ELECTRONIC_REPAIR">Electronic Repairs</option>
+                    <option value="SPA">Spa</option>
+                    <option value="ELECTRIC_WORK">Electric Work</option>
+                    <option value="PAINTING">Painting</option>
+                    <option value="CARPENTRY_WORK">Carpentry Works</option>
+                    <option value="WELDING">Welding</option>
+                    <option value="VEHICLE_REPAIR">Vehicle Repair</option>
+                    <option value="EVENT_MANAGEMENT">Event Management</option>
+                  </select>
+                </div>
+
+                <!--
+                  CARPENTER,
+        AC_REPAIR_AND_SERVICE,
+        ELECTRICIAN,
+        COMPUTER_REPAIR_AND_SERVICE,
+        APPLIANCES_REPAIR_AND_SERVICE,
+        TV_REPAIR_AND_SERVICE,
+        ,
+      CLEANING,
+        LAUNDRY,
+        RO_REPAIR_AND_SERVICE,
+        WASING_MACHINE,
+        REFRIGERATOR_REPAIR_AND_SERVICE,
+        PEST_CONTROL,
+        MOBILE_REPAIR_AND_SERVICE,
+        WOMEN_SALON,
+        MEN_SALON,
+        PAINTING,
+        HOME_SECURITY,
+        CAR_WASH
+                -->
+
+                <!--
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <input type="text" placeholder="Service Category" class="form-control form-control-sm" />
+                </div>
+              -->
+
+                <!-- Service Name input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <!-- <label class="form-label" for="password">Password</label> -->
+                  <input type="text" placeholder="Service Name" class="form-control form-control-sm"
+                    formControlName="serviceName" />
+                </div>
+
+
+                <!-- Service Duration input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <!-- <label class="form-label" for="password">Password</label> -->
+                  <input type="number" placeholder="Service Duration in minutes" class="form-control form-control-sm"
+                    formControlName="serviceDuration" />
+                </div>
+
+
+                <!-- Cost input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <!-- <label class="form-label" for="password">Password</label> -->
+                  <input type="number" placeholder="Service Cost" class="form-control form-control-sm"
+                    formControlName="cost" />
+                </div>
+
+                <!-- Service Description input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <!-- <label class="form-label" for="password">Password</label> -->
+                  <textarea placeholder="Service Description" class="form-control form-control-sm"
+                    formControlName="description"> </textarea>
+
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <!-- <label class="form-label" for="password">Password</label> -->
+                  <input type="file" placeholder="Service Image" class="form-control form-control-sm"
+                    formControlName="serviceImage" />
+                </div>
+
+
+                <!-- Submit button -->
+                <div class="d-flex justify-content-center mb-3">
+                  <button type="Submit" class="btn btn-primary btn-sm btn-block px-md-5">
+                    Upload
+                  </button>
+                </div>
+                <!-- to login page -->
+
+                <!--     <div class="d-flex justify-content-center mb-4">
+                  <p >
+                    New User? <a routerLink="/registeration"> Register </a>
+                  </p>
+                </div>
+-->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

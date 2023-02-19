@@ -1,0 +1,72 @@
+.main-container{
+  background-color: transparent;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+.form-control {
+  border: 1px solid #cfd1d8;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: .825rem;
+  background: #ffffff;
+  color: #2e323c;
+}
+
+.card {
+  background: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  margin-bottom: 1rem;
+}
+
+.next-button{
+  float: right;
+  color: #3b5998;
+  /* border-radius: 80%; */
+}
+
+.back-button{
+  float: left;
+  color: #3b5998;
+  /* border-radius: 50%; */
+}
+
+.next-button:hover{
+  color: #ffffff;
+}
+
+.back-button:hover{
+  color: #ffffff;
+}
+
+.example-form-field {
+  width: 100%;
+}
+
+.example-button-container > button {
+  margin: 0 12px;
+}
+
+.badge{
+  background-color: #cfd1d8;
+  color: #2e323c;
+  font-weight:normal;
+}
+
+
+
+
+/* Validation */
+input.ng-touched.ng-invalid{
+  border-bottom:3px red solid;
+}
+
+input.ng-touched.ng-valid{
+  border-bottom:5px rgb(27, 197, 27) solid;
+}

@@ -1,0 +1,240 @@
+<p>vendor-description-service-provider works!</p>
+
+<div id="flat_nav_breadcrumb">  
+    <a href="#">Home</a>
+    <a href="/appointments">Appointment</a>
+<a href="/vendor-details">Vendor Description</a>>
+</div>
+
+
+<div class="vendor-details" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content=" initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous"> 
+</head>
+<body>
+
+<div class="container-lg" style="margin-top:30px;">
+<div class="row">
+<div class="col-12">
+<h1 style="text-align: center;font-family: 'Times New Roman', Times, serif;"> Vendor Description</h1>
+</div>
+</div>
+<div class="row" >
+<div class = "col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12" >
+<div class="card" >
+<div class="card-body">
+<h4 class="card-title">Personal information</h4>
+<div >
+  
+</div>
+<div class="row" style="text-align-last: 149px;">
+  <div class="col-sm-3" >
+    <p class="mb-0">Name</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.firstName}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-3">
+    <p class="mb-0">Age</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.age}}</p>
+  </div>
+</div>
+
+<hr>
+<div class="row" style="text-align-last: 149px;">
+  <div class="col-sm-3">
+    <span>
+      <div> <i class="fa fa-phone"> Phone</i>
+        <!-- <p class="mb-0">Phone</p> --></div> 
+    </span>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.mobileNo}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-4">
+    <p class="mb-0">Experience</p>
+  </div>
+  <div class="col-sm-8" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.experience.experience}}</p>
+  </div>
+</div> 
+
+</div>
+</div>
+</div>
+<!--card 2-->
+<div class = "col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12" style="width: 100px;">
+<div class="card" style="text-align: left;">
+<div class="card-body">
+<h4 class="card-title">Profile</h4>
+<div class="card-body text-center" >
+  <!-- <img src="\assets\profilephoto.jpg"> -->
+  <!-- <img src= "{{vendorDesc.image}}"> --> 
+  <div class="profile_div" *ngIf=" currentImage">
+    <img class="profile" src={{currentImage} alt="img">
+  </div>
+
+<div class="profile_div default" >
+    <img class="profile default" src="..\assets\profilephoto.jpg" alt="">
+</div>
+     
+</div>
+
+<p class=" mb-1" style="text-align: center;">{{vendorDesc.experience.description}}</p>
+<div class="d-flex justify-content-center mb-2">
+
+<!-- <button type="button" class="btn btn-primary" (click)="book()">Book</button> -->
+
+<button type="button" class="btn btn-primary" (click)="books(vendorDesc)">Book Now</button>
+
+<button type="button" class="btn btn-outline-primary ms-1" (click)="whenMessageClicked()">Message</button>
+</div>
+</div>
+</div>
+
+</div>
+<!--card 3-->
+<!-- <div class = "col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12" >
+<div class="card" >
+<div class="card-body" >
+<h4 class="card-title">Job information</h4>
+<div class="row" style="text-align-last: 149px;">
+  <div class="col-sm-3" >
+    <p class="mb-0">Name</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.workShopAddress.wo}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3" >
+    <p class="mb-0">Experience</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.experience.experience}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-4" >
+    <p class="mb-0">Shop Name</p>
+  </div>
+  <div class="col-sm-8" style="text-align: right;">
+    <p class="text-muted mb-0">{{work.workShopName}}</p>
+  </div>
+</div>
+
+<hr>
+<div class="row">
+  <div class="col-sm-4" >
+    <p class="mb-0">Shop Address</p>
+  </div>
+  <div class="col-sm-8" style="text-align: right;">jghjhgjgkjhjkh
+    <p class="text-muted mb-0">{{vendorDesc.WorkShopAddress.shopAdress}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-3">
+    <p class="mb-0">Specialties</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.Experience.profession}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-4">
+    <p class="mb-0">other Services</p>
+  </div>
+  <div class="col-sm-8" style="text-align: right;">
+    <p class="text-muted mb-0">sdfsdfsdfsdfsdfsf{{vendorDesc.Experience.subProfession}}</p>
+    
+  </div>
+</div>
+
+
+</div>
+</div>
+</div> -->
+<div class = "col-lg-4 col-sm-4 col-md-4 col-xl-4 col-xs-12" >
+<div class="card" >
+<div class="card-body">
+<h4 class="card-title">Job information</h4>
+<div >
+  
+</div>
+<div class="row" style="text-align-last: 149px;">
+  <div class="col-sm-4" >
+    <p class="mb-0">Shop Name</p>
+  </div>
+  <div class="col-sm-8">
+    <p class="text-muted mb-0">{{vendorDesc.workShopAddress.workShopName}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-3">
+    <i class="fa fa-map-marker"> Address</i>
+    <!-- <p class="mb-0">Address</p> -->
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.workShopAddress.doorNo}},{{vendorDesc.workShopAddress.addressLine}},{{vendorDesc.workShopAddress.district}},{{vendorDesc.workShopAddress.state}}</p>
+  </div>
+</div>
+
+<hr>
+<div class="row" style="text-align-last: 149px;">
+  <div class="col-sm-3">
+    <p class="mb-0">profession</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.experience.profession}}</p>
+  </div>
+</div>
+<!--                 
+<hr>
+<div class="row">
+  <div class="col-sm-3">
+    <p class="mb-0">Mobile</p>
+  </div>
+  <div class="col-sm-9" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.phoneNo}}</p>
+  </div>
+</div> -->
+<hr>
+<div class="row">
+  <div class="col-sm-4">
+    <p class="mb-0">Other Services</p>
+  </div>
+  <div class="col-sm-8" style="text-align: right;">
+    <p class="text-muted mb-0">{{vendorDesc.experience.subProfession}}</p>
+  </div>
+</div>
+
+</div>
+</div>
+</div> 
+<!--
+<app-location-tracking></app-location-tracking>
+-->
+<!-- <app-location-tracking></app-location-tracking> -->
+</div>
+</div>
+
+

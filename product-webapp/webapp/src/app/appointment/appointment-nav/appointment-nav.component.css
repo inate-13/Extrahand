@@ -1,0 +1,11 @@
+table {
+    width: 100%;
+   
+  }
+
+  .table-view{
+    padding: 10px;
+    margin: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }

@@ -1,0 +1,29 @@
+<div id="flat_nav_breadcrumb">
+    <a href="#">Home</a>
+    <a href="/vendors">Vendor Selection</a>
+    
+</div>
+
+<div class="vendors">
+    <h3>Available Vendors</h3>
+    <ul>
+        <li *ngFor="let vendor of selectedSubService.vendorsList">
+            <a (click)="vendorChoice(vendor,emailId)">
+                <div class="card" style="width: 15rem;height: auto;">
+                    <img class="card-img-top" src={{vendor.imageUrl}} alt="Card image cap">
+                    <div class="card-image-overlay">
+                      <h5 class="card-title">{{vendor.name}}</h5><br>
+                      <ul class="list-group list-group-flush">
+                        <div class="details">
+                            <li class="list-group-item">Age:&nbsp;&nbsp;{{vendor.age}}</li>
+                            <li class="list-group-item">Gender:&nbsp;&nbsp;{{vendor.gender}}</li>
+                            <li class="list-group-item">Experience:&nbsp;&nbsp;{{vendor.experience}}</li>
+                            <li class="list-group-item">Contact:&nbsp;&nbsp;{{vendor.contact}}</li>
+                        </div>
+                      </ul>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

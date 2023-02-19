@@ -1,0 +1,84 @@
+
+<div class="container py-5 px-4 body">
+    
+    <div class="row rounded-lg overflow-hidden shadow">
+      <!-- Users box-->
+      <div class="col-5 px-0">
+        <div class="bg-white">
+  
+          <div class="bg-gray px-4 py-2 bg-light pad">
+            <p style="color: #3b5998;  border-radius: 1vh; " class="h5 mb-0 py-1">Contacts</p>
+          </div>
+  
+          <div class="messages-box" >
+            <div class="list-group rounded-0" >
+        
+              <a class="list-group-item list-group-item-action list-group-item-light rounded-0"  *ngFor="let c of contactList" (click)="showProfileChats(c.vendorId,c.userId)">
+                <div class="media"><img src="{{imgsrc}}" alt="user" width="30vh" class="rounded-circle">
+                  <div class="media-body ml-4">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <h5 class="mb-0" *ngIf="role=='CONSUMER'">{{c.vendorName}}</h5>
+                      <h5 class="mb-0" *ngIf="role=='VENDOR'">{{c.userName}}</h5>
+                    </div>
+                    <p class="font-italic text-muted mb-0 text-small">A messaging app is a platform that allows the user to send and receive messages in real-time</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Chat Box-->
+      <div class="col-7 px-0  profile-header   " *ngIf="flag">
+        <div >
+          <a *ngIf="role=='CONSUMER'">
+            <div style="font-size: 25px"><img src={{imgsrc}} alt="user" width="30vh" class="rounded-circle msgprofile"><span style="color:white; padding-left: 3vh;">{{profile2.vendorName}}<mat-icon (click)="clearchat()" class="delete" >delete</mat-icon></span></div>
+          </a>
+          <a *ngIf="role=='VENDOR'">
+            <div style="font-size: 25px"><img src={{imgsrc}} alt="user" width="30vh" class="rounded-circle msgprofile"><span style="color:white; padding-left: 3vh;">{{profile2.userName}}<mat-icon (click)="clearchat()" class="delete" >delete</mat-icon></span></div>
+          </a>
+          
+        </div>
+       <div class="px-4 py-5 chat-box bg-white">
+        <div class="chat">
+     
+            <div class="chat-history">
+                <ul class="m-b-0" >
+                 <div *ngFor="let m of messages">
+                    <li class="clearfix" *ngIf="m.role==role">
+                        <div class="message-data text-right">
+                            <span class="message-data-time">{{m.messageTime}}</span>
+                        </div><br><br>
+                        <div class="message other-message float-right">{{m.message}}</div>
+                    </li>
+                  
+                 
+                    <li class="clearfix" *ngIf="m.role!=role">
+                        <div class="message-data">
+                            <span class="message-data-time">{{m.messageTime}}</span>
+                        </div>
+                        <div class="message my-message">{{m.message}}</div>
+                    </li>
+                  </div>
+                  <div #endOfChat></div>
+                </ul>
+            </div>
+           
+        </div>
+  
+        </div>
+  
+        <!-- Typing area -->
+        <form action="#" class="bg-light">
+          <div class="input-group" >
+            <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light"[formControl]="messageControl"
+            (keydown.enter)="sendMessage()">
+            <button (click)="sendMessage()" class="sendbutton"><mat-icon class="send">send</mat-icon></button>
+            
+           
+          </div>
+        </form>
+  
+      </div>
+    </div>
+</div>

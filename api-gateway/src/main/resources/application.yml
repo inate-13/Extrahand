@@ -1,0 +1,176 @@
+
+#    eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#    register-with-eureka: true
+#    fetch-registry: true
+#
+server:
+  port: 8080
+#ribbon:
+#  ReadTimeout: 60000
+#
+#
+#
+spring:
+  application:
+    name: "api-gateway"
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+#      routes:
+#
+#        - id: assessment-service
+#          uri: lb://assessment-service
+#          predicates:
+#            - Path=/assessment-service/**
+#          filters:
+#            - RewritePath=/assessment-service(?<segment>/?.*), $\{segment}
+#
+#        - id: authentication-service
+#          uri: lb://authentication-service
+#          predicates:
+#            - Path=/authentication-service/**
+#          filters:
+#            - RewritePath=/authentication-service(?<segment>/?.*), $\{segment}
+#
+#
+#        - id: application-register-service
+#          uri: lb://application-register-service
+#          predicates:
+#            - Path=/application-register-service/**
+#          filters:
+#            - RewritePath=/application-register-service(?<segment>/?.*), $\{segment}
+#
+#
+#        - id: chatroom-service
+#          uri: lb://chatroom-service
+#          predicates:
+#            - Path=/chatroom-service/**
+#          filters:
+#            - RewritePath=/chatroom-service(?<segment>/?.*), $\{segment}
+#
+#        - id: chatbot-service
+#          uri: lb://chatbot-service
+#          predicates:
+#            - Path=/chatbot-service/**
+#          filters:
+#            - RewritePath=/chatbot-service(?<segment>/?.*), $\{segment}
+#
+##        - id: cv-generation-service
+##          uri: lb://cv-generation-service
+##          predicates:
+##            - Path=/cv-generation-service/**
+##          filters:
+##            - RewritePath=/cv-generation-service(?<segment>/?.*), $\{segment}
+#
+#        - id: email-service
+#          uri: lb://email-service
+#          predicates:
+#            - Path=/email-service/**
+#          filters:
+#            - RewritePath=/email-service(?<segment>/?.*), $\{segment}
+#
+#        - id: post-service
+#          uri: lb://post-service
+#          predicates:
+#            - Path=/post-service/**
+#          filters:
+#            - RewritePath=/post-service(?<segment>/?.*), $\{segment}
+#
+#
+#
+#        - id: trend-lab-service
+#          uri: lb://trend-lab-service
+#          predicates:
+#            - Path=/trend-lab-service/**
+#          filters:
+#            - RewritePath=/trend-lab-service(?<segment>/?.*), $\{segment}
+#
+#
+#
+#        - id: recommendation-service
+#          uri: lb://recommendation-service
+#          predicates:
+#            - Path=/recommendation-service/**
+#          filters:
+#            - RewritePath=/recommendation-service(?<segment>/?.*), $\{segment}
+#
+#
+#        - id: resources-service
+#          uri: lb://resources-service
+#          predicates:
+#            - Path=/resources-service/**
+#          filters:
+#            - RewritePath=/resources-service(?<segment>/?.*), $\{segment}
+#
+#        - id: product-webapp
+#          uri: lb://product-webapp
+#          predicates:
+#            - Path=/**
+#          filters:
+#            - RewritePath=(?<segment>/?.*), $\{segment}
+#
+#
+#
+#
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: always
+#    metrics:
+#      enabled: true
+#    prometheus:
+#      enabled: true
+#  metrics:
+#    export:
+#      prometheus:
+#        enabled: true
+#
+
+
+
+
+#server:
+#  port: 8080
+#spring:
+#  application:
+#    name: api-gateway-service
+#  main:
+#    web-application-type: reactive
+#  cloud:
+#    gateway:
+#      default-filters:
+#        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods: "*"
+#            allowedHeaders: "*"
+#eureka:
+#  client:
+#    defaultZone: http://${EUREKA_SERVER_IP:localhost}:${EUREKA_SERVER_PORT:8761}/eureka
+#    fetchRegistry: true
+#    registerWithEureka: true
+
+
+
+
+
+
+

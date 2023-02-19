@@ -1,0 +1,93 @@
+<div class="table-view">
+    <div class="mat-elevation-z8">
+      <table mat-table matSort [dataSource]="dataSource">
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="appointmentId">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.appointmentId}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="ConsumerEmailId">
+          <th mat-header-cell *matHeaderCellDef>Consumer EmailId </th>
+          <td mat-cell *matCellDef="let element"> {{element.userEmailId}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="ConsumerName">
+          <th mat-header-cell *matHeaderCellDef> Consumer Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+        </ng-container>
+    
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Time">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Time </th>
+          <td mat-cell *matCellDef="let element"> {{element.appointmentTime}} </td>
+        </ng-container>
+    
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="phoneNo">
+          <th mat-header-cell  *matHeaderCellDef>Consumer PhoneNo </th>
+          <td mat-cell *matCellDef="let element"> {{element.vendorphoneNo}} </td>
+        </ng-container>
+    
+        <!-- <ng-container matColumnDef="area">
+          <th mat-header-cell  *matHeaderCellDef>Consumer Area </th>
+          <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+        </ng-container> -->
+  
+        <ng-container matColumnDef="status">
+          <th mat-header-cell  *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element;let i=index">
+            <mat-form-field appearance="fill">
+              <mat-label>Status</mat-label>
+              <select matNativeControl  (change)="selectCar($event,element)" [disabled]="element.status == 'done'" >
+            
+                <option value="pending">Pending</option>
+                <option value="done" [selected]="element.status == 'done'">Done</option>
+              </select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell  *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon (click)="deleteAppointment(element.appointmentId)">delete</mat-icon>
+            
+           </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="map">
+          <th mat-header-cell  *matHeaderCellDef> Map </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon (click)="locationTrackOfVendor(element.userEmailId)">near_me</mat-icon>
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="chat">
+          <th mat-header-cell  *matHeaderCellDef> Chat </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon routerLink="/chat">chat_bubble</mat-icon>
+          </td>
+        </ng-container>
+  
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator #paginator
+                    [pageSize]="5"    
+                    [pageSizeOptions]="[5, 10, 20]"
+                     >
+      </mat-paginator>
+    
+    </div>
+  
+  </div>

@@ -1,0 +1,179 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="opencards" *ngIf="opneCards" >
+    <div class="cards">
+
+        <mat-card class="example-card" *ngFor="let data of object" >
+<!-- <mat-card class="example-card" *ngFor="let data of vendorsList | paginate:{itemsPerPage:3, currentPage:p}">
+   -->         <mat-card-header >
+        <div mat-card-avatar></div>
+        <mat-card-title class="service-name">{{data.serviceName}} </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="/assets/vendorSuggestionIMG/a.jpeg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        
+<span >
+{{data.serviceCatogries}}
+</span>
+  <br>
+  <br>
+  <div style="justify-content: space-between;">
+<span>
+ Duration: {{data.serviceDuration}}
+</span>  
+<br>
+<br>
+<span style="margin-left:24px;">
+Cost: <i class="fa fa-rupee"></i>{{data.cost}} 
+</span>
+<br>
+</div>
+  <br>
+<span>
+  {{data.description}}
+</span>  
+  <br>
+  
+      </mat-card-content>
+      <mat-card-actions>
+
+
+       
+    <div style="position: relative!important;" >
+      <div style=" display:flex ;position:absolute;top:0;left: 0;">
+        <mat-icon style="padding-right: 35px;" (click)="updateService(data)">create</mat-icon>
+        <mat-icon style="margin-left: 5px;" (click)="deleteService(data.serviceId,data.serviceName)">delete</mat-icon>    
+      </div>
+    </div>
+  <div style="justify-content: flex-end; display: flex;">
+    <a mat-button>Bookings <mat-icon  (click)="GetserviceId(data)">arrow_right_alt</mat-icon></a>
+    
+</div>
+
+<div class="float">
+  
+</div>
+  <!--
+  <button matRipple class="Cb"style="padding: 5px; margin: 10px;" >Update</button>
+        <button matRipple class="Cb"style="padding: 5px; margin: 10px;" 
+        >Delete</button>
+     
+        
+        <button matRipple class="Cb" (click)="updateService({{data}})">Update</button>
+        <button matRipple class="Cb" (click)="deleteService({{data.serviceId}})">Delete</button>
+   -->   </mat-card-actions>
+    </mat-card>
+
+
+
+    
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="h-100 d-flex align-items-center justify-content-center content">
+  <div class="col-lg-6 mb-3 mb-lg-0  " *ngIf="Isupdateopen"  style="box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15); background-color: #f2f2f2; margin: 40px;" >
+  
+  
+      <div class="card-body py-5 px-md-5 " >
+        <h2 class="fw-bold d-flex justify-content-center mb-3">Update Form</h2>
+
+        <form [formGroup]="UpdateServiceForm" (ngSubmit)="UpdateSaveService()">
+
+
+
+          <div class="form-outline d-flex justify-content-center mb-4">
+            <!-- <label class="form-label" for="emailId">Email Address</label> -->
+
+            <select formControlName="serviceCatogries" class="form-control form-control-sm" name="cat" id="cat">
+              <option value="" disabled selected hidden>Please select category  </option>
+              <option value="CARPENTER">Carpenter</option>
+              <option value="AC_REPAIR_AND_SERVICE">Ac Repair and Services</option>
+              <option value="ELECTRICIAN">Electrician</option>
+              <option value="COMPUTER_REPAIR_AND_SERVICE">Computer Repair and Services</option>
+              <option value="APPLIANCES_REPAIR_AND_SERVICE">Appliances Repair and Services</option>
+              <option value="TV_REPAIR_AND_SERVICE">Tv Repair and Services</option>
+              <option value="PLUMBER">Plumber</option>
+              <option value="CLEANING">Cleaning</option>
+              <option value="LAUNDRY">Laundry</option>
+              <option value="RO_REPAIR_AND_SERVICE">RO Repair and Services</option>
+              <option value="WASING_MACHINE">Washing Mmachine</option>
+              <option value="REFRIGERATOR_REPAIR_AND_SERVICE">Refrigerator Repair and Services</option>
+              <option value="PEST_CONTROL">Pest Control</option>
+              <option value="MOBILE_REPAIR_AND_SERVICE">Mobile Repair and Services</option>
+              <option value="WOMEN_SALON">Women Salon</option>
+              <option value="MEN_SALON">Men Salon</option>
+              <option value="PAINTING">Painting</option>
+              <option value="HOME_SECURITY">Home Security</option>
+              <option value="CAR_WASH">Car Wash</option>
+            </select>
+
+          </div>
+
+
+          <!-- Service Name input -->
+          <div class="form-outline d-flex justify-content-center mb-4">
+            <!-- <label class="form-label" for="password">Password</label> -->
+            <input type="text" placeholder="Service Name" class="form-control form-control-sm"
+              formControlName="serviceName"  readonly/>
+          </div>
+
+
+          <!-- Service Duration input -->
+          <div class="form-outline d-flex justify-content-center mb-4">
+            <!-- <label class="form-label" for="password">Password</label> -->
+            <input type="number" placeholder="Service Duration in minutes" class="form-control form-control-sm"
+              formControlName="serviceDuration" />
+          </div>
+
+
+          <!-- Cost input -->
+          <div class="form-outline d-flex justify-content-center mb-4">
+            <!-- <label class="form-label" for="password">Password</label> -->
+            <input type="number" placeholder="Service Cost" class="form-control form-control-sm"
+              formControlName="cost" />
+          </div>
+
+          <!-- Service Description input -->
+          <div class="form-outline d-flex justify-content-center mb-4">
+            <!-- <label class="form-label" for="password">Password</label> -->
+            <textarea placeholder="Service Description" class="form-control form-control-sm"
+              formControlName="description"> </textarea>
+
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline d-flex justify-content-center mb-4">
+            <!-- <label class="form-label" for="password">Password</label> -->
+            <input type="file" placeholder="Service Image" class="form-control form-control-sm"
+              formControlName="serviceImage" />
+          </div>
+
+
+          <!-- Submit button -->
+          <div class="d-flex justify-content-center mb-3">
+            <div style="margin-right:200px; " >
+            <button type="Submit" class="btn btn-primary btn-sm btn-block px-md-5">
+              Update
+            </button></div >
+            <div>
+              <button (click)="openclose()" class="btn btn-primary btn-sm btn-block px-md-5"  >
+              Close
+            </button> </div>
+
+          </div>
+
+        </form>
+      </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

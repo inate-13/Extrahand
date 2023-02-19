@@ -1,0 +1,14 @@
+<div class="rounded d-flex flex-column p-2" style="background-color: #f8f9fa;">
+    <div class="container mt-5 align-items-center" *ngFor="let transactionData of transactionDataList">
+      
+      <div class="card  w-75 mb-0.5">
+        <div class="card-header">{{transactionData.status}}</div>
+        <div class="card-body">
+          <h5 class="card-title">₹{{transactionData.amount}}</h5>
+          <p class="card-text">service ID: {{transactionData.paymentId}}          payment ID: {{transactionData.serviceId}}</p>
+          <small class="d-flex justify-content-end">{{transactionData.dateTime}}</small>
+        </div>
+      </div>
+    
+    </div>
+    </div>

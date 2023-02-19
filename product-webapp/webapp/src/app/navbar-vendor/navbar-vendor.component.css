@@ -1,0 +1,118 @@
+
+.routing-data{
+  min-height:35rem;
+}
+  
+  mat-divider{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  mat-sidenav{
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: linear-gradient(-45deg,#B39DDB,#64B5F6,#F48FB1);
+    color: rgb(55, 54, 54);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  mat-sidenav a:hover{
+    background-color: rgb(194, 215, 226);
+  }
+  
+  mat-sidenav-container{
+    height: calc(100vh - 65px);
+  }
+  
+  mat-sidenav li button{
+    color: rgb(67, 67, 67);
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  
+  .example-spacer {
+    flex: auto;
+  }
+  
+  .link{
+    cursor: pointer;
+  }
+  
+  button{
+    border-style: none;
+  }
+  
+  
+  ****************************************************************
+
+  .example-sidenav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 200px;
+    position: absolute !important;
+    background-color: transparent;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .btn {
+    border: none;
+    /* background-color: inherit; */
+    padding: 14px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+   
+    
+  
+  }
+  
+  
+  .booking {
+    color: rgb(45, 45, 45);
+    float:right;
+  }
+  
+  /* .booking:hover {
+    background-color: skyblue;
+    color: white;
+  }
+   */
+  
+  .services {
+    color: rgb(140, 138, 138);
+    float:right;
+  }
+  
+  /* .services:hover {
+    background: skyblue;
+    color: white;
+  } */
+  
+  a{
+    /* font-style: none !important; */
+    color: black;
+    text-decoration: none;
+    
+  }
+.mat-toolbar{
+  background: linear-gradient(-45deg,#D1C4E9,#90CAF9,#F8BBD0);
+}
+
+.routing-data{
+  min-height:35rem;
+}
+
+  /*  */

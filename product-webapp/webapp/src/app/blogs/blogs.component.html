@@ -1,0 +1,153 @@
+<div id="flat_nav_breadcrumb">
+  <a href="#">Home</a>
+  <a href="/blog">Blogs</a>
+</div>
+<!--Select Menu-->
+<div *ngIf="SelectMenu" class="h-100 d-flex align-items-center justify-content-center"  style="margin-top: 20px;">
+<div class="form-outline d-flex justify-content-center mb-4" style="width: 400px; text-align: center;">
+  <select  class="form-control form-control-sm" [(ngModel)]="GetValueFromOption" (ngModelChange)="GetValue()">
+    <option hidden [value]="" selected>All Blogs</option>
+    <option value="AllBlogs">All Blogs</option>
+    <option value="MyBlogs">My Blogs</option>
+    <option value="UpoadBlogs">Upload Blogs</option>
+  </select>
+</div>
+</div>
+
+
+<!--Blog Upload Form-->
+<div *ngIf="bloguploadForm" class="h-100 d-flex align-items-center justify-content-center">
+    <div class="col-lg-6 mb-3 mb-lg-0  "  style="box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15); background-color: #f2f2f2; margin: 40px;" >
+
+        <div class="card-body py-5 px-md-5 " >
+            <h2 class="fw-bold d-flex justify-content-center mb-3">Blogs</h2>
+    
+            <form [formGroup]="BlogForm" (ngSubmit)="BlogServicemethod()">
+    
+    
+              <!-- Service Name input -->
+              <div class="form-outline d-flex justify-content-center mb-4">
+                <!-- <label class="form-label" for="password">Password</label> -->
+                <input type="text" placeholder="Blog Title" class="form-control form-control-sm"
+                  formControlName="blogTitle" />
+              </div>
+    
+    
+              <!-- Service Duration input -->
+              <!-- <div class="form-outline d-flex justify-content-center mb-4"> -->
+                <!-- <label class="form-label" for="password">Password</label> -->
+                <!-- <input type="text" placeholder="Upload Date" class="form-control form-control-sm"
+                  formControlName="uploadDate" />
+              </div> -->
+    
+    
+              <!-- Cost input -->
+              <div class="form-outline d-flex justify-content-center mb-4">
+                <!-- <label class="form-label" for="password">Password</label> -->
+                <input type="text" placeholder="Blog Small Discription" class="form-control form-control-sm"
+                  formControlName="blogSmallDescription" />
+              </div>
+    
+              <!-- Service Description input -->
+              <div class="form-outline d-flex justify-content-center mb-4">
+                <!-- <label class="form-label" for="password">Password</label> -->
+                <textarea placeholder="Blog Content" class="form-control form-control-sm"
+                  formControlName="blogContent"> </textarea>
+    
+              </div>
+    
+              <!-- Password input -->
+              <div class="form-outline d-flex justify-content-center mb-4">
+                <!-- <label class="form-label" for="password">Password</label> -->
+                <input type="file" placeholder="Blog Image" class="form-control form-control-sm"
+                  formControlName="blogImage" />
+              </div>
+    
+    
+              <!-- Submit button -->
+              <div class="d-flex justify-content-center mb-3">
+                <button type="Submit" class="btn btn-primary btn-sm btn-block px-md-5">
+                  Upload
+                </button>    
+              </div>
+    
+            </form>
+          </div>
+    </div>
+  </div>
+
+<!--Blog Show-->
+<div class="opencards" *ngIf="opneCardsofBlog" >
+  <div class="cards">
+
+    <mat-card class="example-card"  *ngFor="let data of object" >
+<!--      <mat-card class="example-card" *ngFor="let data of object" >
+ <mat-card class="example-card" *ngFor="let data of vendorsList | paginate:{itemsPerPage:3, currentPage:p}">
+ -->         <mat-card-header >
+      <div mat-card-avatar></div>
+      <mat-card-title style="align-items: flex-start;"> {{data.blogTitle}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="/assets/vendorSuggestionIMG/a.jpeg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+
+
+    <div>
+     
+      <div style="position: relative!important;" >
+        <div style=" display:flex ;position:absolute;top:0;right:0;">
+          <mat-icon >account_circle</mat-icon>
+          <span style="margin-bottom:12px;">{{data.vendorName}}</span>
+        </div>
+      </div>
+      <div style="display: flex;">
+          <mat-icon>calendar_today</mat-icon>
+          <span style="margin-top:4px;">{{data.uploadDate}}</span>
+      </div>    
+    </div>
+    
+
+<br>
+<br>
+      <p>
+        {{data.blogSmallDescription}}
+      <br>
+    </p>
+  <!--
+    <div style="justify-content: flex-end; display: flex;">
+      <a mat-button>Read Now <mat-icon  (click)="deleteBlogById(data.blogId)">arrow_right_alt</mat-icon></a>
+  </div>
+-->
+  <div style="position: relative!important;" >
+    <div style=" display:flex ;position:absolute;top:0;left: 0;">
+       <mat-icon *ngIf="DUbutton"  style="margin-left: 5px;" (click)="deleteBlogById(data.blogId)">delete</mat-icon>    
+    </div>
+  </div>
+<div style="justify-content: flex-end; display: flex;" (click)="openDialog(data.blogId)">
+  <a mat-button>Read Now <mat-icon   >arrow_right_alt</mat-icon></a>
+  
+</div>  
+      <br>
+     
+     <br>
+   
+    </mat-card-content>
+    
+
+    <mat-card-actions>
+
+<!--<div class="downbutton" >
+      <button: 5px; margin: 10px;" >Update</button>
+      <button matRipple class="Cb"style="padding: 5px; margin: 10px;" 
+       (click)="deleteService(data.serviceId)">Delete</button>
+    </div>
+       -->   </mat-card-actions>
+  </mat-card>
+
+
+
+  
+</div>
+
+</div>
+
+

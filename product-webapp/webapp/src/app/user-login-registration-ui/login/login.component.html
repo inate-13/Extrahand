@@ -1,0 +1,68 @@
+<!-- Section: Design Block -->
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Connect with Us<br />
+            <span class="text-primary">for an Extra Hand</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Electricians,
+            AC Technician,
+            Refrigerator Technician,
+            Makeup Artist,
+            TV Technician,
+            Water purifier Technician,
+            Bathroom Cleaner worker,
+            Saloon for Men/ women,
+            Plumber,
+            Kitchen cleaning proficient,
+            Car cleaning,
+            Massage Men/women,
+            Pest control service ,
+            Furniture Makers.Builders,
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <h2 class="fw-bold d-flex justify-content-center mb-5">Login</h2>
+              <form [formGroup]="loginForm" (ngSubmit)="loginCheck()">
+                <!-- Email input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <input type="email" placeholder=" Email" class="form-control form-control-lg"
+                    formControlName="emailId" />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline d-flex justify-content-center mb-4">
+                  <input type="password" placeholder=" Password" class="form-control form-control-lg"
+                    formControlName="password" />
+                </div>
+
+                <!-- Submit button -->
+                <div class="d-flex justify-content-center mb-4">
+                  <button type="Submit" class="btn btn-primary btn-lg btn-block px-md-5 mb-4"
+                    [disabled]="!loginForm.valid">
+                    Login
+                  </button>
+                </div>
+                <!-- to login page -->
+                <div class="d-flex justify-content-center mb-4">
+                  <p>
+                    New User? <a routerLink="/registeration"> Register </a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

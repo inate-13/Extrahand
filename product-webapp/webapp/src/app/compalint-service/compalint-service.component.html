@@ -1,0 +1,231 @@
+<div id="flat_nav_breadcrumb">
+        <a href="#">Home</a>
+        <a href="/complaint">Complaint</a>
+</div>
+
+
+<body>
+
+        <div class="banner">
+
+                <h1 style="text-align: center;">Sorry For Your Inconvenience!!</h1>
+                <form [formGroup]="ComplaintForm">
+
+
+                        <div style="margin-top: 50px;" class="issu">
+
+
+                                <h2 style=" margin-bottom: 10px;">What issue are you facing ? </h2>
+
+                                <!--  <ul>  -->
+                                <div class="firstmenu" style="text-align: center;">
+                                        <div class="hoverr">
+                                                <li style="display: inline-flex; ">
+                                                        <mat-icon style="margin-top: 15px; margin-right: 20px;">
+                                                                account_circle</mat-icon><button id="abcd"
+                                                                (click)=open(1)>Account Related</button>
+                                                </li>
+                                        </div>
+                                        <div class="hoverr">
+                                                <li style="display: inline-flex; ">
+                                                        <mat-icon style="margin-top: 15px; margin-right: 20px;">payment
+                                                        </mat-icon><button (click)=open(2) id="abcd" type="submit"
+                                                                value="Payment Related">Payment Related</button>
+                                                </li>
+                                        </div>
+                                        <div class="hoverr">
+                                                <li style="display: inline-flex; ">
+                                                        <mat-icon
+                                                                style="margin-top: 15px; margin-right: 20px; margin-left: -25px;">
+                                                                local_offer</mat-icon><button id="abcd" (click)=open(3)
+                                                                type="submit">Offer Related</button>
+                                                </li>
+                                        </div>
+                                        <div class="hoverr">
+                                                <li style="display: inline-flex; ">
+                                                        <mat-icon
+                                                                style="margin-top: 15px ; margin-right: 20px; margin-left: -31px;">
+                                                                error_outline</mat-icon><button id="abcd" type="submit"
+                                                                (click)=open(4) value="Error Related">Error
+                                                                Related</button>
+                                                </li>
+                                        </div>
+                                        <div class="hoverr">
+                                                <li style="display: inline-flex; ">
+                                                        <mat-icon
+                                                                style="margin-top: 15px; margin-right: 20px; margin-left: -15px;">
+                                                                person</mat-icon><button id="abcd" type="submit"
+                                                                (click)=open(5) value="Vendor Related">Vendor
+                                                                Related</button>
+                                                </li>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="sidebox">
+
+
+                                <h2 style=" margin-bottom: 10px;">Please Select issue</h2>
+
+                                <div class="column" *ngIf="account">
+                                        <!--  <ul>  -->
+                                        <li><button id="abcd" type="submit" value="I cant change my account password"
+                                                        (click)="subop1('Account Related','I cant change my account password')">I
+                                                        cant change my
+                                                        account
+                                                        password</button></li>
+                                        <li><button id="abcd" type="submit"
+                                                        value="	I cant change my register phone number"
+                                                        (click)="subop1('Account Related','I cant change my register phone number')">I
+                                                        cant change
+                                                        my register phone
+                                                        number</button></li>
+                                        <li><button id="abcd" type="submit" value="	I cant change my emailId"
+                                                        (click)="subop1('Account Related','I cant change my emailId')">I
+                                                        cant change my
+                                                        emailId</button></li>
+                                        <li><button id="abcd" type="submit" value="	I cant do deactivate my account"
+                                                        (click)="subop1('Account Related','I cant do deactivate my account')">I
+                                                        cant do deactivate
+                                                        my account</button>
+                                        </li>
+                                        <!--  </ul>  -->
+                                </div>
+
+
+
+
+                                <div class="column" *ngIf="a2">
+
+
+                                        <!--  <ul>  -->
+                                        <li><button id="abcd" type="submit" (click)="subop1('Payment Related','I made a payment but order was not
+                        successful')">I made a payment but order was not
+                                                        successful</button></li>
+                                        <li><button id="abcd" type="submit"
+                                                        (click)="subop1('Payment Related','I am unable to avail the displayed offer')">
+                                                        I am unable
+                                                        to avail the displayed offer</button>
+                                        </li>
+                                        <li><button id="abcd" type="submit"
+                                                        (click)="subop1('Payment Related','I have complain related to EMI')">
+                                                        I have complain
+                                                        related to EMI</button></li>
+
+
+                                        <li><button id="abcd" type="submit"
+                                                        (click)="subop1('Payment Related','I am not able to use my Gift Card')">
+                                                        I am not able to
+                                                        use my Gift Card</button></li>
+                                        <!--  </ul>  -->
+                                </div>
+
+
+                                <!--  <ul>  -->
+                                <div class="column" *ngIf="a3">
+
+                                        <li><button id="abcd" type="submit"
+                                                        (click)="subop1('Offer Related','I have not get my cashback')">I
+                                                        havn't get my cashback</button></li>
+                                        <li><button id="abcd" type="submit"
+                                                        (click)="subop1('Offer Related','I have not get instant discount')">
+                                                        I havn't get instant discount
+                                                </button></li>
+                                        <!--  </ul>  -->
+                                </div>
+
+
+                                <!--  <ul>  -->
+
+                                <div class="column" *ngIf="a4">
+
+                                        <li><button id="abcd" type="submit"
+                                                        value="I'm facing some technical issues while trying to order"
+                                                        (click)="subop1('Error Related','I am facing some technical issues while trying to order')">I'm
+                                                        facing some technical issues while trying to
+                                                        order</button></li>
+                                        <li><button id="abcd" type="submit"
+                                                        value="	An item's description/image/price is wrong"
+                                                        (click)="subop1('Error Related','An items description/image/price is wrong')">
+                                                        An item's description/image/price is wrong</button>
+                                        </li>
+                                        <!--  </ul>  -->
+                                </div>
+
+                                <!--  <ul>  -->
+
+                                <div *ngIf="a5">
+
+
+                                        <form [formGroup]="FindVendorForm">
+                                                <div class="vediv">
+                                                        <input type="text" class="vename" formControlName="VendorId"
+                                                                placeholder="Please Enter Vendor Id " id="vendorId"
+                                                                name="vendorId"
+                                                                style="background: none;outline: none; padding:5px ; margin: 15px;">
+                                                        <button class="vesubmit" (click)="findvendor()">Submit</button>
+                                                </div>
+                                                <div style="margin: 10px;">
+                                                        <span> {{vendorNa}} </span>
+                                                </div>
+                                        </form>
+
+                                        <div>
+                                                <li class="column" *ngIf="VendorComp"><button id="abcd" type="submit"
+                                                                value="Bad Behaviour"
+                                                                (click)="subop1('Vendor Related','Bad Behaviour')">Bad
+                                                                Behaviour</button></li>
+                                                <li class="column" *ngIf="VendorComp"><button id="abcd" type="submit"
+                                                                value="	Not in time"
+                                                                (click)="subop1('Vendor Related','Not in time')">
+                                                                Not in time</button></li>
+                                                <li class="column" *ngIf="VendorComp"><button id="abcd" type="submit"
+                                                                value="	Ask for Extra Money"
+                                                                (click)="subop1('Vendor Related','Ask for Extra Money')">
+                                                                Ask for Extra Money</button></li>
+                                                <li class="column" *ngIf="VendorComp"><button id="abcd" type="submit"
+                                                                value="	Not complete Work"
+                                                                (click)="subop1('Vendor Related','Not complete Work')">
+                                                                Not complete Work</button></li>
+                                                <li class="column" *ngIf="VendorComp"><button id="abcd" type="submit"
+                                                                value="	Do wrong Work"
+                                                                (click)="subop1('Vendor Related','Do wrong Work')">
+                                                                Do wrong Work</button></li>
+                                                <li class="column" *ngIf="VendorComp"><button id="abcd" type="submit"
+                                                                value="	Other" (click)="openother()">
+                                                                Other</button></li>
+
+                                                <div class="vediv" *ngIf="openotherr    ">
+                                                        <form [formGroup]="OtherForm">
+
+                                                                <textarea formControlName="complaint_Description"
+                                                                        rows="4" cols="50" id="textareaother"
+                                                                        name="textareaother"
+                                                                        style="background: none;outline: none; padding:5px ; margin: 15px; "
+                                                                        placeholder="Please Enter Your Complaine"></textarea>
+                                                                <button class="vesubmit"
+                                                                        (click)="subop2()">Submit</button>
+                                                        </form>
+                                                </div>
+                                        </div>
+                                        <!--  </ul>  -->
+
+                                </div>
+                                <!--  </ul>  -->
+
+                        </div>
+                        <!--sidebox-->
+                        <!--
+
+            Title : <input type="text" formControlName="complaint_Title" style="margin-left: 43px;">
+            <br>
+            <br>
+            Description : <textarea rows="5" cols="33" formControlName="complaint_Description"></textarea>
+            <br>
+            <br>
+
+            <input class="abc" type="submit" value="Submit">
+-->
+                </form>
+        </div>
+</body>

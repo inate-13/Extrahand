@@ -1,0 +1,68 @@
+<!-- <section>
+    <div class="content col-lg-12 col-xl-12 col-sm-12 col-md-12">
+      <div>
+        <h2 class="mt-5">Small hands under cooking</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore dolor, laudantium ipsam 
+          nostrum ipsa consectetur repellat soluta magni, dicta sunt nisi placeat quia maiores animi
+          at iusto similique sit omnis?
+        </p>
+      </div>
+    </div>
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240">
+      <path fill="#fdfdfd" fill-opacity="1" d="M0,160L120,176C240,192,480,224,720,229.3C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+    </svg>
+</section> -->
+
+
+
+<div id="flat_nav_breadcrumb">
+    <a href="#">Home</a>
+    <a href="/sub-services">Sub-Services</a>
+   
+</div>
+
+<!-- 
+<div class="subservices">
+    <h3>Choose a Service</h3>
+    <ul>
+        <li *ngFor="let s of selectedService.subServiceList">
+            <a (click)="selectedServicetoStore(s.name)">
+                <div class="card" style="width: 15rem;">
+                    <img class="card-img-top" src={{s.imageUrl}} alt="Card image cap">
+                    <div class="card-image-overlay">
+                      <h5 class="card-title">{{s.name}}</h5><br>
+                      {{s.description}}
+                      <ul class="list-group list-group-flush">
+                      <li class="list-group-item">{{s.price}}</li>
+                      <li class="list-group-item">{{s.minTime}}</li>
+                    </ul>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    
+</div> -->
+<!-- <style style="margin-left: 20%;"></style> -->
+
+<div *ngFor="let s of selectedService.subServiceList" class="cardds"> 
+  <a (click)="selectedServicetoStore(s.name)"> 
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <!-- <mat-card-title style="align-content: center;">{{s.name}}</mat-card-title> -->
+    <h1 style="align-self:center;font-weight:bold;font-weight: 700;">{{s.name}}  </h1>
+    <!-- <mat-card-subtitle>{{s.price}}</mat-card-subtitle> -->
+  </mat-card-header>
+  <img class="matimg" mat-card-image src="{{s.imageUrl}}" alt="Photo of eg. image">
+  <mat-card-content>
+    <p> We offer services {{s.description}}</p>
+    <p style="font-size:108% ;font-style: oblique;">Starts at<strong> ₹</strong>200+</p>   
+
+  </mat-card-content>
+
+</mat-card>
+</a>
+</div>

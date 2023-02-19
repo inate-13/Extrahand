@@ -1,0 +1,59 @@
+.downbutton{
+  display: flex;
+  padding: 3rem;
+}
+
+.opencards{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: grid;
+}
+
+.cards{
+     /* justify-content: center; */
+     align-items: flex-start;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.example-card {
+    /* margin-left: 90px; */
+
+    color: black;
+    max-width: 350px;
+    padding: 30px;
+    margin: 2.5rem;
+    background-color:white;
+    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.20);
+    text-align: center;
+    
+  }
+  .example-card:hover{
+    background-color: #f2f2f2;
+    color: black;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.35);
+}
+
+.example-card:hover  .Cb{
+  background-color:  rgb(191, 196, 218);;
+  color: black;
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all 1s ease;
+}
+.service-name{
+  /* justify-items:flex-start; */
+  /* justify-content: center; */
+  align-items: flex-start;
+  /* padding: 2px; */
+  padding-left: 3.8rem;
+  float: left;
+}
+
+.content{
+  min-height: 35rem;
+}

@@ -1,0 +1,94 @@
+cache:
+  key: "maven3"
+  paths:
+    - .m2/repository
+
+variables:
+  SONAR_URL: "http://jenkins-immersive.stackroute.in:9000/"
+  SONAR_LOGIN: "admin"
+  SONAR_PASSWORD: "admin"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+stages:
+  - package
+  - test
+  - java_quality
+  - ng_quality
+
+#maven_job:
+#  stage: package
+#  script:
+#    - mvn clean package
+#  only:
+#    - master
+#    - v1.0.0
+#    - v1.0.1
+#    - v1.0.2
+#    - v1.0.3
+#    - stage
+
+maven_build:
+  image: maven:3-jdk-11
+  stage: package
+  script: mvn clean package
+  only:
+    - master
+    - v1.0.0
+    - v1.0.1
+    - v1.0.2
+    - v1.0.3
+    - stage
+
+  artifacts:
+    paths:
+      - /target/*.jar
+
+code_coverage:
+  image: maven:3-jdk-11
+  stage: test
+  only:
+    - master
+    - v1.0.0
+    - v1.0.1
+    - v1.0.2
+    - v1.0.3
+    - stage
+
+  script:
+    - "mvn clean test"
+    - "mvn jacoco:report"
+    - awk -F"," '{ instructions += $4 + $5; covered += $5 } END { print covered, "/",instructions, "instructions covered"; print 100*covered/instructions, "% covered" }'
+  coverage: '/Code coverage: \d+\.\d+/'
+  artifacts:
+    paths:
+      - target/site/jacoco/
+
+java_lint:
+  image: maven:3-jdk-11
+  stage: java_quality
+  script:
+    - mvn -Dmaven.repo.local=/root/.m2/repository clean install -DskipTests=true -B
+    - mvn -Dmaven.repo.local=/root/.m2/repository pmd:check -B
+  only:
+    - master
+    - v1.0.0
+    - v1.0.1
+    - v1.0.2
+    - v1.0.3
+    - stage
+
+angular_lint:
+  image: node:12-alpine
+  stage: ng_quality
+  script:
+    - cd product-webapp
+    - cd webapp
+    - npm install
+    - npm run lint -- --format json
+  only:
+    - master
+    - v1.0.0
+    - v1.0.1
+    - v1.0.2
+    - v1.0.3
+    - stage

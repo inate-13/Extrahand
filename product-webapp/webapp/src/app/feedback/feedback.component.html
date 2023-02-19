@@ -1,0 +1,49 @@
+<div id="flat_nav_breadcrumb">
+    <a href="#">Home</a>
+     <a href="/feedback">Feedback</a>
+    
+</div>
+
+  
+  <!--  <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    </head>  -->
+
+    <body style="background-color: #f2f2f2;">
+    
+
+<div class="ce" *ngIf="open">
+<div class="form-container">
+    <form action="">
+        <h1 style="text-align: center;">Give Your Feedback</h1>
+      
+        <div class="starr col-lg-8  col-md-8  col-sm-8" >
+            <input type="radio" name="rate" id="rate-1"  (click)="star('5')" value="5" [formControl]=" rattingControl">
+            <label  for="rate-1" class="fa fa-star" style="font-size:30px ; padding: 10px;"></label>
+            <input type="radio" name="rate" id="rate-2" (click)="star('4')" value="4" [formControl]=" rattingControl">
+            <label   for="rate-2" class="fa fa-star" style="font-size:30px ; padding: 10px;"></label>
+            <input type="radio" name="rate" id="rate-3" (click)="star('3')" value="3" [formControl]=" rattingControl">
+            <label  for="rate-3" class="fa fa-star" style="font-size:30px ; padding: 10px;"></label>
+            <input type="radio" name="rate" id="rate-4" (click)="star('2')" value="2" [formControl]=" rattingControl">
+            <label   for="rate-4" class="fa fa-star" style="font-size:30px ; padding: 10px;"></label>
+            <input type="radio" name="rate" id="rate-5" (click)="star('1')" value="1" [formControl]=" rattingControl">
+            <label  for="rate-5" class="fa fa-star" style="font-size:30px ; padding: 10px;"></label>
+            
+        </div>
+        <div>
+           <header *ngIf="fivestar">I Loved it 😍</header>
+           <header *ngIf="fourstar">I just liked it 😎</header> 
+           <header *ngIf="threestar">It is awesome 😄</header> 
+           <header *ngIf="twostar">I don't like it 😠</header> 
+           <header *ngIf="onestar">I just hate it 😡</header>  
+        </div>
+        
+    <div class="row">
+   
+    <textarea name="a" id="a" cols="30" rows="10" placeholder="Please Enter Your Feedback..."[formControl]="suggestionControl" ></textarea>
+</div>
+    <div class="row"><input class="sub" type="button" value="submit"(click)="submitFeedback()"></div>
+</form>
+</div>
+</div>
+</body>

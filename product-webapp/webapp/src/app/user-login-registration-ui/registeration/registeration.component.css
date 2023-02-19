@@ -1,0 +1,8 @@
+/* Validation */
+input.ng-touched.ng-invalid{
+    border-left:3px red solid;
+}
+  
+  input.ng-touched.ng-valid{
+    border-left:5px rgb(27, 197, 27) solid;
+}

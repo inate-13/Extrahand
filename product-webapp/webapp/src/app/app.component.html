@@ -1,0 +1,22 @@
+
+
+
+
+<body>
+
+  <app-nav-bar *ngIf="role=='CONSUMER' || role==null||undefined"></app-nav-bar>
+  <app-navbar-vendor *ngIf="role=='VENDOR'"></app-navbar-vendor>
+
+</body> 
+
+
+ <!-- <div>
+   <h2></h2>
+   <P></P>
+   <LABel>Translate ser</LABel>
+   <select  #langSelect (change)="translate.use(langSelect)">
+    <option *ngFor="let lang of translate.getLangs()" value=""></option>
+     
+   </select>
+ </div> -->
+

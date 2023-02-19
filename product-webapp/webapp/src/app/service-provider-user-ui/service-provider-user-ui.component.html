@@ -1,0 +1,42 @@
+<div class="chips" >
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip *ngFor="let sub of subServices" (click)="getAllVendorsBySubservice(sub)">{{sub}}</mat-chip>
+  </mat-chip-list>
+</div>
+
+<div class="title">
+    <h1 *ngIf="h1"> Available Vendors</h1>
+    <h1 *ngIf="h2">Sorry No Vendors Available</h1>
+    <div class="line"></div>
+  </div>
+  
+  <div  class="opencards">
+    <div class="cards">
+      <mat-card class="example-card" *ngFor="let v of vendorList" >
+        <!-- <mat-card class="example-card" *ngFor="let data of vendorsList | paginate:{itemsPerPage:3, currentPage:p}">
+       -->
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title> {{v.serviceName}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="/assets/vendorSuggestionIMG/a.jpeg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            <br>
+            <strong>{{v.vendorName}}</strong>
+            <br>
+            {{v.serviceDuration}} Hours
+            <br>
+            ₹{{v.cost}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button matRipple class="Cb" (click)="vendorDescription(v)" >Book Now</button>
+        </mat-card-actions>
+      </mat-card>
+  
+    </div>
+  
+  </div>
+  
+  

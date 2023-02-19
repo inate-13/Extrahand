@@ -1,0 +1,146 @@
+.example-card {
+    max-width: 900px;
+    margin-bottom: 8px;
+  }
+ 
+.column {
+  float: left;
+  width: 25%;
+  padding:  10px;
+}
+/**/
+.card{
+  margin: 10px ;
+  box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.2);
+  border-radius: 6px;
+  height: 100%;
+  width: 104%;
+  background-color:lavender;
+  /* transition: 0.3s; */
+}
+.card:hover {
+box-shadow: 1px 10px 16px 0 rgba(0,0,0,0.3);
+}
+.card-title{
+  text-align: center;
+  color: #4d4b4b;
+  font-weight: bold;
+}
+.card-text{
+      font-weight: 500;
+color: #000000;
+}
+.card-image{
+  text-align: center;
+  margin: 5vh 0;
+}
+/* .card-text{
+  text-align: center;
+} */
+
+.title-heading{
+  font-size: 3em;
+  text-align: center;
+  /* margin: 4%; */
+  font-weight: bold;
+
+}
+.container{
+   background-color: #c7c8ca; 
+}
+.icon{
+  text-align: left;
+  
+}
+img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+h2{
+  font-size: 22px;
+  color: #888888;
+  text-decoration: none;
+  font-family: 'tahoma';
+}
+a.headerlink{
+  text-decoration: none;
+}
+
+/* Flat Nav Breadcrumbs Styles */
+#flat_nav_breadcrumb {
+  overflow: hidden;
+  margin: 0px 0 20px 0;
+  white-space: nowrap;
+}
+#flat_nav_breadcrumb a:first-child {
+  padding-left: 25px;
+}
+#flat_nav_breadcrumb a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 7px 0 7px 45px;
+  line-height: 16px;
+  background: #e9eef0;
+  position: relative;
+  display: inline-block;
+}
+#flat_nav_breadcrumb a:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 35px solid rgba(0, 0, 0, 0);
+  border-bottom: 35px solid rgba(0, 0, 0, 0);
+  border-left: 30px solid #e9eef0;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index: 2;
+  margin-top: -35px;
+}
+#flat_nav_breadcrumb a:nth-child(2) {
+  background: transparent;
+}
+#flat_nav_breadcrumb a:nth-child(2):after {
+  border-left-color: transparent;
+  top:20%;
+  padding: -8px;
+  color:#000000;
+  content: '';
+}
+#flat_nav_breadcrumb a:nth-child(3) {
+  background: transparent;
+}
+#flat_nav_breadcrumb a:nth-child(3):after {
+  border-left-color: transparent;
+  top:20%;
+  padding: -8px;
+  color:#000000;
+  content: '';
+}
+
+/* image */
+.profile_div {
+  /* overflow: auto; */
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+  position: relative;
+  top: -30px;
+
+  /* border: 2px solid #90cea1; */
+  height: 100px;
+  width: 100px;
+  /* border-radius: 80%; */
+  padding-left: 100px;
+}
+
+.map{
+  padding-top: 50px;
+}
